@@ -1,0 +1,79 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css?family=Wallpoet&display=swap');
+
+body{
+	background-image: url('../img/background.jpg');
+	background-attachment: fixed;
+	font-family: 'Wallpoet', cursive;
+	overflow: hidden;
+}
+
+h1{
+	font-size: 30pt;
+}
+
+h5{
+	font-size: 12pt;
+}
+
+div#chuva{
+	background-image: url('../img/rain.gif');
+	background-size: 100%;
+	background-position: center;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+div#cabecalho{
+	width: 100%;
+	text-align: center;
+	background-color: rgba(255, 0, 255, 0.5);
+	box-shadow: 0px 6px 10px blue;
+	padding-bottom: 10px;
+	background-image: url('../img/bg1.png');
+	background-position: center;
+}
+
+div#cabecalho h1{
+	color: goldenrod;
+	text-shadow: 2px 2px 10px blue;
+	margin: 0;
+	padding: 0;
+}
+
+div#cabecalho h5{
+	color: goldenrod;
+	text-shadow: 2px 2px 2px purple;
+	margin: 10px 0px;
+	padding: 0;
+}
+
+div#jogo{
+	border: 1px solid red;
+	width: 400px;
+	height: 400px;
+	margin: 10px auto;
+}
+
+div#pontuacao{
+	background-color: rgba(0, 0, 255, 0.5);
+	box-shadow: 0px 6px 10px magenta;
+	text-align: center;
+	margin: 0;
+	width: 100%;
+	background-image: url('../img/bg2.png');
+	background-position: center;
+}
+
+div#pontuacao h2{
+	color: goldenrod;
+	text-shadow: 2px 2px 8px;
+	margin: 0;
+	padding: 0;
+}
+
+div#pontuacao label{
+	color: magenta;
+	text-shadow: 2px 2px 4px; 
+}

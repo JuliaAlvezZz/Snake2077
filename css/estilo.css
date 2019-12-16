@@ -68,6 +68,24 @@ div#head{
 	top: 195px;
 }
 
+div#body{
+	background-color: green;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	margin: auto;
+	top: 195px;
+}
+
+div#tail{
+	background-color: blue;
+	width: 10px;
+	height: 10px;
+	position: relative;
+	margin: auto;
+	top: 195px;
+}
+
 div#pontuacao{
 	background-color: rgba(0, 0, 255, 0.5);
 	box-shadow: 0px 6px 10px magenta;

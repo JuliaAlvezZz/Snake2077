@@ -1,31 +1,44 @@
+var a;
+a=setInterval(function(){mexer(0, 0);}, 500);
+
 $(document).ready(function(){
 	$(document).keydown(function(event){
-		h=$("#head");
-		setInterval(mexer, 100);
-		alert(event.keyCode);
-		function mexer(){
-			switch(event.keyCode){
-				case 37:
-					if(h.offset().left>485){
-						h.animate({"left": "-=5px"}, "slow");
-					}
-					break;
-				case 38:
-					if(h.offset().top>120){
-						h.animate({"top": "-=5px"}, "slow");
-					}
-					break;
-				case 39:
-					if(h.offset().left<870){
-						h.animate({"left": "+=5px"}, "slow");
-					}
-					break;
-				case 40:
-					if(h.offset().top<505){
-						h.animate({"top": "+=5px"}, "slow");
-					}
-					break;
-			}
+		var dirY=0, dirX=0;
+		switch(event.keyCode){
+			case 37:
+				dirY=0;
+				dirX=-1;
+				break;
+			case 38:
+				dirY=-1;
+				dirX=0;
+				break;
+			case 39:
+				dirY=0;
+				dirX=1;
+				break;
+			case 40:
+				dirY=1;
+				dirX=0;
+				break;
 		}
+		clearInterval(a);
+		a=setInterval(function(){mexer(dirY, dirX);}, 500);
 	});
 });
+
+function mexer(dirY, dirX){
+	var h=$("#head"), b=$("#body"), t=$("#tail");
+	
+	if(dirY===0 && dirX===-1 && h.offset().left>495){
+		h.animate({"left": "-=5px"}, "slow");
+	}else if(dirY===-1 && dirX===0 && h.offset().top>115){
+		h.animate({"top": "-=5px"}, "slow");
+	}else if(dirY===0 && dirX===1 && h.offset().left<875){
+		h.animate({"left": "+=5px"}, "slow");
+	}else if(dirY===1 && dirX===0 && h.offset().top<505){
+		h.animate({"top": "+=5px"}, "slow");
+	}else{
+		h.stop();
+	}
+}

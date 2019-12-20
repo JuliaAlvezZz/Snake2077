@@ -1,8 +1,9 @@
-var a, vel, n, pontos=0;
+var a, vel, n, pontos;
 
 function comecar(){
-	vel=100;
+	vel=500;
 	n=1;
+	pontos=0;
 	a=setInterval(function(){mexer("cima");}, vel);
 }
 
@@ -27,11 +28,13 @@ $(document).ready(function(){
 		}
 		clearInterval(a);
 		if(n>=5 && n<10){
-			vel=500;
+			vel=250;
 		}else if(n>=10 && n<15){
 			vel=100;
-		}else if(n>=15){
+		}else if(n>=15 && n<20){
 			vel=50;
+		}else if(n>=20){
+			vel=10;
 		}
 
 		a=setInterval(function(){mexer(direcao);}, vel);
@@ -48,7 +51,7 @@ function mexer(direcao){
 
 	bater(h, bL, bT, t);
 	
-	if(h.offset().left<=475 || h.offset().top<=115 || h.offset().left>=880 ||h.offset().top>=515 || (h.offset().top===b.offset().top && h.offset().left===b.offset().left)){
+	if(h.offset().left<=475 || h.offset().top<=110 || h.offset().left>=880 ||h.offset().top>=520 || (h.offset().top===b.offset().top && h.offset().left===b.offset().left)){
 		location.reload();
 	}
 
@@ -65,7 +68,7 @@ function mexer(direcao){
 			}
 		}
 		t.offset({left: bL[bL.length -1], top: bT[bT.length -1]});
-	}else if(direcao==="cima" && h.offset().top>115){
+	}else if(direcao==="cima" && h.offset().top>110){
 		h.offset(function(index, c){
 			p=new Object();
 			p.top=c.top - 10;
@@ -91,7 +94,7 @@ function mexer(direcao){
 			}
 		}
 		t.offset({left: bL[bL.length -1], top: bT[bT.length -1]});
-	}else if(direcao==="baixo" && h.offset().top<515){
+	}else if(direcao==="baixo" && h.offset().top<520){
 		h.offset(function(index, c){
 			p=new Object();
 			p.top=c.top + 10;

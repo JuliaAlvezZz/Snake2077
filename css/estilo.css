@@ -107,6 +107,7 @@ div#pontuacao{
 	box-shadow: 0px 6px 10px magenta;
 	text-align: center;
 	margin: 0;
+	margin-top: 40px;
 	width: 100%;
 	background-image: url('../img/bg2.png');
 	background-position: center;
